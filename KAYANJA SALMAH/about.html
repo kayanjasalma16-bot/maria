@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story | Glaze Gifts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --font-heading: 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --color-bg: #faf7f5;
+      --color-text-dark: #2c2523;
+      --color-text-body: #5a4f52;
+      --color-accent-plum: #7a3e5d;
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(212, 180, 160, 0.25);
+      --glass-blur: blur(12px);
+    }
+    body { font-family: var(--font-body); color: var(--color-text-body); background-color: var(--color-bg); min-height: 100vh; display: flex; flex-direction: column; }
+    .page-wrapper {
+      position: relative; min-height: 100vh; width: 100%; display: flex; flex-direction: column;
+      background: linear-gradient(135deg, rgba(250, 247, 245, 0.92) 0%, rgba(243, 235, 230, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+    }
+    .navbar { position: sticky; top: 0; z-index: 1000; width: 100%; padding: 1.2rem 2rem; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border-bottom: 1px solid var(--glass-border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .logo-icon { width: 28px; height: 28px; }
+    .logo-text { font-family: var(--font-heading); font-size: 1.7rem; font-weight: 700; letter-spacing: 0.12em; color: var(--color-text-dark); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { text-decoration: none; color: var(--color-text-body); font-size: 0.95rem; font-weight: 500; position: relative; padding-bottom: 4px; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-accent-plum); }
+    .btn-shop { text-decoration: none; padding: 0.6rem 1.4rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-plum); border: 1.5px solid var(--color-accent-plum); background: rgba(122,62,93,0.05); }
+    .content-container { max-width: 850px; margin: 0 auto; padding: 3rem 1.5rem 5rem; text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center; }
+    .hero-badge { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.22em; color: var(--color-accent-plum); margin-bottom: 1.2rem; text-transform: uppercase; background: rgba(122,62,93,0.08); padding: 0.45rem 1.3rem; border-radius: 20px; border: 1px solid rgba(122,62,93,0.2); }
+    .page-title { font-family: var(--font-heading); font-size: 3.8rem; font-weight: 600; color: var(--color-text-dark); margin-bottom: 1.5rem; }
+    .page-title span { font-style: italic; color: var(--color-accent-plum); }
+    .story-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.9); border-radius: 24px; padding: 3rem 2.5rem; box-shadow: 0 16px 40px rgba(0,0,0,0.06); text-align: left; }
+    .story-card p { font-size: 1.12rem; line-height: 1.8; color: var(--color-text-body); margin-bottom: 1.5rem; }
+    .story-card p:last-child { margin-bottom: 0; }
+    @media (max-width: 768px) { .nav-links { display: none; } .page-title { font-size: 2.75rem; } .story-card { padding: 2rem 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L15 8L21 9L16.5 13.5L18 20L12 16.5L6 20L7.5 13.5L3 9L9 8L12 2Z" fill="rgba(122, 62, 93, 0.15)" stroke="#7a3e5d"/></svg>
+          <span class="logo-text">GLAZE GIFTS</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="gummies.html">Gummies</a>
+          <a href="wrapping.html">Custom Wrapping</a>
+          <a href="probiotics.html">Probiotics</a>
+          <a href="story.html" class="active">About Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <a href="gummies.html" class="btn-shop">Shop Gifts</a>
+      </div>
+    </header>
+    <main class="content-container">
+      <div class="hero-badge">Est. 2026 • Our Heritage</div>
+      <h1 class="page-title">Our <span>Story</span></h1>
+      <div class="story-card">
+        <p>
+          Glaze Gifts began with a simple belief: gift-giving should be an art form—unique, beautiful, and deeply personal. What started as a passion for exquisite wrapping and intentional presentation quickly grew into a mission to create unforgettable shared moments between givers and receivers.
+        </p>
+        <p>
+          Because gummies are a universal joy loved by all ages, anywhere at any time, we reimagined how they travel. By matching our signature aesthetic with smart, portable packaging, we made it effortless to carry your favorite treats with you on the go.
+        </p>
+        <p>
+          Whether you are treating yourself or surprising a friend, Glaze Gifts turns an everyday snack into a beautifully wrapped, portable moment of joy. We believe that a gift should feel personal from the very first glance. That is why every box is hand-wrapped, tied with premium ribbon, and prepared with precision, care, and elegance.
+        </p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

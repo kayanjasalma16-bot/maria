@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artisanal Gummies Showcase | Glaze Gifts</title>
+
+  <!-- Google Fonts for Luxury Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. RESET & LIGHT LUXURY PALETTE (Matching Home Page)
+       ========================================================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --font-heading: 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      
+      /* Light Luxury Colors */
+      --color-bg: #faf7f5;               /* Warm cream background */
+      --color-text-dark: #2c2523;        /* Deep espresso for headlines */
+      --color-text-body: #5a4f52;        /* Soft charcoal for main copy */
+      --color-accent-plum: #7a3e5d;      /* Rich plum accent */
+      --color-accent-gold: #c6924b;      /* Warm gold tone */
+      
+      /* Light Glassmorphism Variables */
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(212, 180, 160, 0.25);
+      --glass-blur: blur(12px);
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text-body);
+      background-color: var(--color-bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Page Wrapper matching Home Page Gradient & Overlay */
+    .page-wrapper {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background: 
+        linear-gradient(135deg, rgba(250, 247, 245, 0.92) 0%, rgba(243, 235, 230, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+    }
+
+    /* ==========================================================================
+       2. GLASS NAVIGATION BAR (Identical to Home Page)
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      padding: 1.2rem 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo Styling */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--color-text-dark);
+    }
+
+    /* Nav Links */
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-text-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--color-accent-plum);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--color-accent-plum);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Shop Button */
+    .btn-shop {
+      text-decoration: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-accent-plum);
+      border: 1.5px solid var(--color-accent-plum);
+      background: rgba(122, 62, 93, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .btn-shop:hover {
+      background: var(--color-accent-plum);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(122, 62, 93, 0.25);
+    }
+
+    /* ==========================================================================
+       3. GUMMIES SHOWCASE HEADER
+       ========================================================================== */
+    .showcase-container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem 1.5rem;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-badge {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: var(--color-accent-plum);
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      background: rgba(122, 62, 93, 0.08);
+      padding: 0.45rem 1.3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(122, 62, 93, 0.2);
+    }
+
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: 3.8rem;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .page-title span {
+      font-style: italic;
+      color: var(--color-accent-plum);
+    }
+
+    .page-description {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--color-text-body);
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    /* Feature Badges */
+    .badges-wrapper {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge-pill {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--color-accent-plum);
+      background: #ffffff;
+      border: 1px solid rgba(122, 62, 93, 0.2);
+      padding: 0.45rem 1.1rem;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    /* ==========================================================================
+       4. LUXURY CAROUSEL / SLIDER
+       ========================================================================== */
+    .carousel-card {
+      position: relative;
+      width: 100%;
+      max-width: 450px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 28px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel-viewport {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .carousel-slides {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+      width: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .slide-image-wrapper {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .slide-image {
+      width: 290px;
+      height: 290px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+      border: 4px solid #ffffff;
+    }
+
+    .slide-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--color-accent-gold);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 12px;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .slide-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .slide-subtitle {
+      font-size: 1rem;
+      color: var(--color-text-body);
+      max-width: 480px;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .slide-price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-accent-plum);
+      margin-bottom: 1.2rem;
+    }
+
+    /* Carousel Buttons */
+    .btn-add {
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+      background-color: var(--color-accent-plum);
+      box-shadow: 0 6px 18px rgba(122, 62, 93, 0.25);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-add:hover {
+      background-color: #63304a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(122, 62, 93, 0.35);
+    }
+
+    /* Carousel Navigation Arrows */
+    .carousel-btn {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: var(--color-text-dark);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transition: all 0.25s ease;
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      background: var(--color-accent-plum);
+      color: #ffffff;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .carousel-btn.prev { left: -12px; }
+    .carousel-btn.next { right: -12px; }
+
+    /* Indicator Dots */
+    .carousel-dots {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1.8rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(122, 62, 93, 0.25);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: var(--color-accent-plum);
+      width: 28px;
+      border-radius: 10px;
+    }
+
+    /* ==========================================================================
+       5. RESPONSIVE DESIGN (MOBILE)
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page-title { font-size: 2.75rem; }
+      .carousel-card { padding: 1.8rem 1rem; }
+      .slide-image { width: 230px; height: 230px; }
+      .carousel-btn.prev { left: 2px; }
+      .carousel-btn.next { right: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+    
+    <!-- Light Transparent Glass Header -->
+    <header class="navbar">
+      <div class="nav-container">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="logo">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L15 8L21 9L16.5 13.5L18 20L12 16.5L6 20L7.5 13.5L3 9L9 8L12 2Z" fill="rgba(122, 62, 93, 0.15)" stroke="#7a3e5d"/>
+          </svg>
+          <span class="logo-text">GLAZE GIFTS</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="gummies.html" class="active">Gummies</a>
+          <a href="wrapping.html">Custom Wrapping</a>
+          <a href="story.html">About Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="nav-actions">
+          <a href="gummies.html" class="btn-shop">Shop Gifts</a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="showcase-container">
+      
+      <div class="hero-badge">100% Halal • Gluten-Free • Gourmet</div>
+
+      <h1 class="page-title">Artisanal <span>Gummy Showcase</span></h1>
+      
+      <p class="page-description">
+        Welcome to your new favorite sweet spot! Our gummies are bursting with delicious natural flavors, crafted with the finest ingredients, and packed in luxury custom wrappers for the perfect treat anywhere, anytime.
+      </p>
+
+      <!-- Feature Badges -->
+      <div class="badges-wrapper">
+        <span class="badge-pill">✓ Certified Halal</span>
+        <span class="badge-pill">✓ 100% Gluten-Free</span>
+        <span class="badge-pill">✓ Real Fruit Juice</span>
+        <span class="badge-pill">✓ Custom Gift Ready</span>
+      </div>
+
+      <!-- Interactive Luxury Carousel -->
+      <div class="carousel-card">
+        
+        <!-- Arrow Buttons -->
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Previous Slide">❮</button>
+        <button class="carousel-btn next" id="nextBtn" aria-label="Next Slide">❯</button>
+
+        <div class="carousel-viewport">
+          <div class="carousel-slides" id="carouselSlides">
+            
+            <!-- Slide 1 -->
+            <div class="slide">
+              <div class="slide-image-wrapper">
+                
+                <img src="images/gum1.jpeg" alt="Sour Peach Rings" class="slide-image">
+                
+            </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+              <div class="slide-image-wrapper">
+               
+                <img src="images/gum2.jpeg" alt="Sour Peach Rings" class="slide-image">
+              </div>
+              
+            </div>
+
+            <!-- Slide 3 -->
+            
+            <div class="slide">
+              <div class="slide-image-wrapper">
+             
+                <img src="images/gum3.jpeg "alt="Signature Luxury Mix Box" class="slide-image">
+              </div>
+              </div>
+
+              <div class="slide">
+              <div class="slide-image-wrapper">
+             
+                <img src="images/gum4.jpeg "alt="Signature Luxury Mix Box" class="slide-image">
+              </div>
+</div>
+              <div class="slide">
+              <div class="slide-image-wrapper">
+              
+                <img src="images/gum5.jpeg "alt="Signature Luxury Mix Box" class="slide-image">
+              </div>
+</div>
+              <div class="slide">
+              <div class="slide-image-wrapper">
+                
+                <img src="images/gum6.jpeg "alt="Signature Luxury Mix Box" class="slide-image">
+              </div>
+</div>
+              <div class="slide">
+              <div class="slide-image-wrapper">
+               
+                <img src="images/gum7.jpeg "alt="Signature Luxury Mix Box" class="slide-image">
+              </div>
+</div>
+              <div class="slide">
+              <div class="slide-image-wrapper">
+                
+                <img src="images/gum8.jpeg "alt="Signature Luxury Mix Box" class="slide-image">
+              </div>
+              </div>
+              <div class="slide">
+              <div class="slide-image-wrapper">
+                </div>
+                </div>
+                <img src="images/gum9.jpeg "alt="Signature Luxury Mix Box" class="slide-image">
+              </div>
+              </div>
+             
+            </div>
+
+          
+        </div>
+
+        <!-- Indicator Dots -->
+        <div class="carousel-dots">
+          <span class="dot active" onclick="goToSlide(0)"></span>
+          <span class="dot" onclick="goToSlide(1)"></span>
+          <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- JavaScript for Interactive Carousel -->
+  <script>
+    const slides = document.getElementById('carouselSlides');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = document.querySelectorAll('.slide').length;
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
+  </script>
+
+</body>
+</html>

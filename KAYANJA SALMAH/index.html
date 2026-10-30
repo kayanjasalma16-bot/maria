@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glaze Gifts | Thoughtfully Curated, Beautifully Wrapped</title>
+
+  <!-- Google Fonts for Luxury Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. RESET & LIGHT LUXURY PALETTE
+       ========================================================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --font-heading: 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      
+      /* Light Luxury Theme Colors */
+      --color-bg: #faf7f5;               /* Warm cream background */
+      --color-text-dark: #2c2523;        /* Deep espresso for headlines */
+      --color-text-body: #5a4f52;        /* Soft charcoal for main copy */
+      --color-accent-plum: #7a3e5d;      /* Rich plum/berry accent */
+      --color-accent-gold: #c6924b;      /* Warm gold tone */
+      
+      /* Light Glassmorphism Variables */
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(212, 180, 160, 0.25);
+      --glass-blur: blur(12px);
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text-body);
+      background-color: var(--color-bg);
+      overflow-x: hidden;
+    }
+
+    /* ==========================================================================
+       2. HERO WRAPPER WITH LIGHT ELEGANT BACKGROUND
+       ========================================================================== */
+    .hero-wrapper {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      /* Bright, soft gradient blended with subtle luxury gift texture */
+      background: 
+        linear-gradient(135deg, rgba(250, 247, 245, 0.88) 0%, rgba(243, 235, 230, 0.82) 100%),
+        url('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+    }
+
+    /* ==========================================================================
+       3. LIGHT TRANSPARENT GLASS NAVIGATION BAR
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      padding: 1.2rem 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo Styling */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--color-text-dark);
+    }
+
+    /* Nav Links */
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-text-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--color-accent-plum);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--color-accent-plum);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Top Right Shop Button */
+    .btn-shop {
+      text-decoration: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-accent-plum);
+      border: 1.5px solid var(--color-accent-plum);
+      background: rgba(122, 62, 93, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .btn-shop:hover {
+      background: var(--color-accent-plum);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(122, 62, 93, 0.25);
+    }
+
+    /* ==========================================================================
+       4. HERO CONTENT SECTION
+       ========================================================================== */
+    .hero-content {
+      flex: 1;
+      max-width: 850px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .hero-badge {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: var(--color-accent-plum);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      background: rgba(122, 62, 93, 0.08);
+      padding: 0.45rem 1.3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(122, 62, 93, 0.2);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      line-height: 1.15;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title span {
+      font-style: italic;
+      color: var(--color-accent-plum);
+      font-weight: 400;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: var(--color-text-body);
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    /* Call To Action Buttons */
+    .hero-buttons {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--color-accent-plum);
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(122, 62, 93, 0.25);
+    }
+
+    .btn-primary:hover {
+      background-color: #63304a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(122, 62, 93, 0.35);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--color-text-dark);
+      border: 1.5px solid rgba(44, 37, 35, 0.18);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-accent-plum);
+      color: var(--color-accent-plum);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       5. RESPONSIVE DESIGN (MOBILE)
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2.75rem;
+      }
+
+      .hero-description {
+        font-size: 1.05rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .btn {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Container -->
+  <div class="hero-wrapper">
+    
+    <!-- Light Transparent Glass Header -->
+    <header class="navbar">
+      <div class="nav-container">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="logo">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L15 8L21 9L16.5 13.5L18 20L12 16.5L6 20L7.5 13.5L3 9L9 8L12 2Z" fill="rgba(122, 62, 93, 0.15)" stroke="#7a3e5d"/>
+          </svg>
+          <span class="logo-text">GLAZE GIFTS</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="gummies.html">Gummies</a>
+          <a href="custom-wrapping.html">Custom Wrapping</a>
+          <a href="about.html">About Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="nav-actions">
+          <a href="gummies.html" class="btn-shop">Shop Gifts</a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Hero Content -->
+    <main class="hero-content">
+      <div class="hero-badge">EST. 2026 • ARTISANAL CONFECTIONERY</div>
+      
+      <h1 class="hero-title">Thoughtfully Curated,<br><span>Beautifully Wrapped</span></h1>
+      
+      <p class="hero-description">
+        Discover our signature 100% halal, artisanal gummy collections and luxury custom gift packaging designed to make every occasion memorable.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="gummies.html" class="btn btn-primary">Explore Gummies</a>
+        <a href="custom-wrapping.html" class="btn btn-secondary">Custom Wrapping</a>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>
