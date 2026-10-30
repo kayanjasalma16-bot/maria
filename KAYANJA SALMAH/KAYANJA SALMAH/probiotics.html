@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women's Health Probiotics | Glaze Gifts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --font-heading: 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --color-bg: #faf7f5;
+      --color-text-dark: #2c2523;
+      --color-text-body: #5a4f52;
+      --color-accent-plum: #7a3e5d;
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(212, 180, 160, 0.25);
+      --glass-blur: blur(12px);
+      --whatsapp-green: #25D366;
+      --whatsapp-hover: #1DA851;
+      --radius-card: 24px;
+    }
+    body { font-family: var(--font-body); color: var(--color-text-body); background-color: var(--color-bg); min-height: 100vh; display: flex; flex-direction: column; }
+    
+    .page-wrapper {
+      position: relative; min-height: 100vh; width: 100%; display: flex; flex-direction: column;
+      background: linear-gradient(135deg, rgba(250, 247, 245, 0.92) 0%, rgba(243, 235, 230, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+    }
+
+    .navbar { position: sticky; top: 0; z-index: 1000; width: 100%; padding: 1.2rem 2rem; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border-bottom: 1px solid var(--glass-border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .logo-icon { width: 28px; height: 28px; }
+    .logo-text { font-family: var(--font-heading); font-size: 1.7rem; font-weight: 700; letter-spacing: 0.12em; color: var(--color-text-dark); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { text-decoration: none; color: var(--color-text-body); font-size: 0.95rem; font-weight: 500; position: relative; padding-bottom: 4px; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-accent-plum); }
+    .btn-shop { text-decoration: none; padding: 0.6rem 1.4rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-plum); border: 1.5px solid var(--color-accent-plum); background: rgba(122,62,93,0.05); }
+
+    .content-container { max-width: 850px; margin: 0 auto; padding: 3rem 1.5rem 5rem; text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center; width: 100%; }
+    
+    .hero-badge { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.22em; color: var(--color-accent-plum); margin-bottom: 1.2rem; text-transform: uppercase; background: rgba(122,62,93,0.08); padding: 0.45rem 1.3rem; border-radius: 20px; border: 1px solid rgba(122,62,93,0.2); }
+    .page-title { font-family: var(--font-heading); font-size: 3.8rem; font-weight: 600; color: var(--color-text-dark); margin-bottom: 1rem; }
+    .page-title span { font-style: italic; color: var(--color-accent-plum); }
+
+    /* Glassmorphism Card Style */
+    .probiotics-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-card);
+      padding: 3rem 2.5rem;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+      text-align: left;
+      width: 100%;
+    }
+
+    .quote-intro {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--color-accent-plum);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .probiotics-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--color-text-body);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    /* Product Image Container */
+    .product-img-box {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      margin: 2rem auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      background: #fdf5f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      
+    }
+
+    .card-header-flex { display: flex; justify-content: space-between; align-items: center; margin: 2rem 0 1rem; flex-wrap: wrap; gap: 0.5rem; }
+    .card-header-flex h3 { font-family: var(--font-heading); font-size: 2rem; font-weight: 600; color: var(--color-text-dark); }
+    
+    .badge-price { background: rgba(122, 62, 93, 0.08); color: var(--color-accent-plum); font-weight: 700; padding: 0.4rem 1.2rem; border-radius: 20px; font-size: 0.95rem; border: 1px solid rgba(122, 62, 93, 0.2); }
+    
+    .select-group { margin-bottom: 2rem; }
+    .select-group label { display: block; font-weight: 600; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--color-text-dark); }
+    .custom-select { width: 100%; padding: 0.95rem 1rem; border: 1px solid var(--glass-border); border-radius: 12px; font-family: var(--font-body); font-size: 0.98rem; background: rgba(255, 255, 255, 0.9); color: var(--color-text-dark); cursor: pointer; outline: none; }
+
+    .btn-whatsapp { display: flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; padding: 1.1rem; border-radius: 30px; background: var(--whatsapp-green); color: white; font-weight: 700; font-size: 1.05rem; border: none; cursor: pointer; transition: all 0.3s ease; text-decoration: none; text-align: center; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25); }
+    .btn-whatsapp:hover { background: var(--whatsapp-hover); box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35); transform: translateY(-1px); }
+
+    @media (max-width: 768px) { 
+      .nav-links { display: none; } 
+      .page-title { font-size: 2.75rem; } 
+      .probiotics-card { padding: 2rem 1.5rem; } 
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L15 8L21 9L16.5 13.5L18 20L12 16.5L6 20L7.5 13.5L3 9L9 8L12 2Z" fill="rgba(122, 62, 93, 0.15)" stroke="#7a3e5d"/></svg>
+          <span class="logo-text">GLAZE GIFTS</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="gummies.html">Gummies</a>
+          <a href="wrapping.html">Custom Wrapping</a>
+          <a href="probiotics.html" class="active">Probiotics</a>
+          <a href="story.html">About Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <a href="gummies.html" class="btn-shop">Shop Gifts</a>
+      </div>
+    </header>
+
+    <main class="content-container">
+      <div class="hero-badge">Wellness Essentials</div>
+      <h1 class="page-title">Women's <span>Wellness</span></h1>
+      
+      <!-- Probiotics Card with Exact Text & Image Showcase -->
+      <div class="probiotics-card">
+        <p class="quote-intro">"A Healthy Outside starts from the Inside" — Robert Urich.</p>
+        
+        <p class="probiotics-text">
+          Prioritise your daily wellness with Hybrid Health UK's Womens probiotics. Designed to work in harmony with your body. This daily supplement supports digestive health, strengthens your immune system and promotes optimal intimate care.
+        </p>
+
+        <p class="probiotics-text">
+          With the added benefits of Vitamin B6 and cranberry, you get complete specialized support in every dose. Make it a habit! Consistency is the key to unlocking the best results for your body.
+        </p>
+
+        <!-- Product Image Showcase -->
+        <div class="product-img-box">
+          <img src="images/wellness.jpeg" alt="Hybrid Health UK Women's Probiotics Pouch" />
+
+        
+        
+
+        
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function updateWhatsappLink(selectedValue) {
+      const btn = document.getElementById('probioticWhatsappBtn');
+      const message = `Hi Glaze Gifts! I would like to order: Premium Probiotics (${selectedValue})`;
+      btn.href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    }
+  </script>
+</body>
+</html>

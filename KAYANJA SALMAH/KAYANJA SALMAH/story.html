@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story & Menu | Glaze Gifts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --font-heading: 'Cormorant Garamond', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --color-bg: #faf7f5;
+      --color-text-dark: #2c2523;
+      --color-text-body: #5a4f52;
+      --color-accent-plum: #7a3e5d;
+      --color-pink-accent: #900C3F;
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(212, 180, 160, 0.25);
+      --glass-blur: blur(12px);
+      --whatsapp-green: #25D366;
+      --whatsapp-hover: #1DA851;
+      --radius-card: 24px;
+    }
+    body { font-family: var(--font-body); color: var(--color-text-body); background-color: var(--color-bg); min-height: 100vh; display: flex; flex-direction: column; }
+    
+    .page-wrapper {
+      position: relative; min-height: 100vh; width: 100%; display: flex; flex-direction: column;
+      background: linear-gradient(135deg, rgba(250, 247, 245, 0.92) 0%, rgba(243, 235, 230, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+    }
+
+    .navbar { position: sticky; top: 0; z-index: 1000; width: 100%; padding: 1.2rem 2rem; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border-bottom: 1px solid var(--glass-border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .logo-icon { width: 28px; height: 28px; }
+    .logo-text { font-family: var(--font-heading); font-size: 1.7rem; font-weight: 700; letter-spacing: 0.12em; color: var(--color-text-dark); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { text-decoration: none; color: var(--color-text-body); font-size: 0.95rem; font-weight: 500; position: relative; padding-bottom: 4px; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-accent-plum); }
+    .btn-shop { text-decoration: none; padding: 0.6rem 1.4rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-plum); border: 1.5px solid var(--color-accent-plum); background: rgba(122,62,93,0.05); }
+
+    .content-container { max-width: 850px; margin: 0 auto; padding: 3rem 1.5rem 5rem; text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center; width: 100%; }
+    
+    .hero-badge { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.22em; color: var(--color-accent-plum); margin-bottom: 1.2rem; text-transform: uppercase; background: rgba(122,62,93,0.08); padding: 0.45rem 1.3rem; border-radius: 20px; border: 1px solid rgba(122,62,93,0.2); }
+    .page-title { font-family: var(--font-heading); font-size: 3.8rem; font-weight: 600; color: var(--color-text-dark); margin-bottom: 2.5rem; }
+    .page-title span { font-style: italic; color: var(--color-accent-plum); }
+
+    /* Glassmorphism Story Card */
+    .story-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--radius-card); padding: 3rem 2.5rem; box-shadow: 0 16px 40px rgba(0,0,0,0.06); text-align: left; width: 100%; margin-bottom: 4rem; }
+    .story-card p { font-size: 1.12rem; line-height: 1.8; color: var(--color-text-body); margin-bottom: 1.5rem; }
+    .story-card p:last-child { margin-bottom: 0; }
+
+    /* Menu & Wellness Pricing Section */
+    .menu-section-title { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 600; color: var(--color-text-dark); margin-bottom: 2.5rem; text-align: center; }
+    
+    .product-card-large {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-card);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+      text-align: left;
+      width: 100%;
+    }
+
+    .card-header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+    .card-header-flex h3 { font-family: var(--font-heading); font-size: 2rem; font-weight: 600; color: var(--color-text-dark); }
+    
+    .badge-price { background: rgba(122, 62, 93, 0.08); color: var(--color-accent-plum); font-weight: 700; padding: 0.4rem 1.2rem; border-radius: 20px; font-size: 0.95rem; border: 1px solid rgba(122, 62, 93, 0.2); }
+    .card-desc { color: var(--color-text-body); font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.7; }
+    
+    .bullets-list { margin-bottom: 1.8rem; list-style: none; }
+    .bullets-list li { margin-bottom: 0.6rem; color: var(--color-text-body); font-size: 1rem; display: flex; align-items: baseline; gap: 0.5rem; }
+    .bullets-list li span.dot { color: var(--color-accent-plum); font-size: 1.2rem; }
+
+    .select-group { margin-bottom: 1.8rem; }
+    .select-group label { display: block; font-weight: 600; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--color-text-dark); }
+    .custom-select { width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--glass-border); border-radius: 12px; font-family: var(--font-body); font-size: 0.98rem; background: rgba(255, 255, 255, 0.9); color: var(--color-text-dark); cursor: pointer; outline: none; }
+
+    .btn-whatsapp { display: flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; padding: 1.05rem; border-radius: 30px; background: var(--whatsapp-green); color: white; font-weight: 700; font-size: 1.05rem; border: none; cursor: pointer; transition: all 0.3s ease; text-decoration: none; text-align: center; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25); }
+    .btn-whatsapp:hover { background: var(--whatsapp-hover); box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35); transform: translateY(-1px); }
+
+    @media (max-width: 768px) { 
+      .nav-links { display: none; } 
+      .page-title { font-size: 2.75rem; } 
+      .story-card, .product-card-large { padding: 2rem 1.5rem; } 
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L15 8L21 9L16.5 13.5L18 20L12 16.5L6 20L7.5 13.5L3 9L9 8L12 2Z" fill="rgba(122, 62, 93, 0.15)" stroke="#7a3e5d"/></svg>
+          <span class="logo-text">GLAZE GIFTS</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="gummies.html">Gummies</a>
+          <a href="wrapping.html">Custom Wrapping</a>
+          <a href="probiotics.html">Probiotics</a>
+          <a href="story.html" class="active">About Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <a href="gummies.html" class="btn-shop">Shop Gifts</a>
+      </div>
+    </header>
+
+    <main class="content-container">
+      <div class="hero-badge">Est. 2026 • Our Heritage</div>
+      <h1 class="page-title">Our <span>Story</span></h1>
+      
+      <!-- Story Card -->
+      <div class="story-card">
+        <p>
+          Glaze Gifts began with a simple belief: gift-giving should be an art form—unique, beautiful, and deeply personal. What started as a passion for exquisite wrapping and intentional presentation quickly grew into a mission to create unforgettable shared moments between givers and receivers.
+        </p>
+        <p>
+          Because gummies are a universal joy loved by all ages, anywhere at any time, we reimagined how they travel. By matching our signature aesthetic with smart, portable packaging, we made it effortless to carry your favorite treats with you on the go.
+        </p>
+        <p>
+          Whether you are treating yourself or surprising a friend, Glaze Gifts turns an everyday snack into a beautifully wrapped, portable moment of joy. We believe that a gift should feel personal from the very first glance. That is why every box is hand-wrapped, tied with premium ribbon, and prepared with precision, care, and elegance.
+        </p>
+      </div>
+
+      <!-- Menu & Wellness Pricing Title -->
+      <h2 class="menu-section-title">Menu & Wellness Pricing</h2>
+
+      <!-- Card 1: Assorted Gummy Packs -->
+      <div class="product-card-large">
+        <div class="card-header-flex">
+          <h3>Assorted Gummy Packs</h3>
+          <span class="badge-price">UGX 5,000 • UGX 10,000</span>
+        </div>
+        
+        <p class="card-desc">Our pocket-sized and share-sized packs are packed with a vibrant assortment of gourmet gummies. Every single pack delivers a delicious halal surprise mix!</p>
+
+        <ul class="bullets-list">
+          <li><span class="dot">•</span> <strong>Texture:</strong> Fun Fizzy Crystals & Smooth non-Fizzy Classics</li>
+          <li><span class="dot">•</span> <strong>Flavours:</strong> Mouth-puckering Sour bursts & Smooth, Juicy gummies</li>
+        </ul>
+
+        <div class="select-group">
+          <label for="gummySize">Select Package Size:</label>
+          <select id="gummySize" class="custom-select" onchange="updateWhatsappLink('gummyWhatsappBtn', 'Assorted Gummy Pack', this.value)">
+            <option value="Pocket-Sized Pack — UGX 5,000">Pocket-Sized Pack — UGX 5,000</option>
+            <option value="Share-Sized Pack — UGX 10,000">Share-Sized Pack — UGX 10,000</option>
+          </select>
+        </div>
+
+        <a id="gummyWhatsappBtn" href="https://wa.me/?text=Hi%20Glaze%20Gifts!%20I%20would%20like%20to%20order:%20Pocket-Sized%20Pack%20—%20UGX%205,000" target="_blank" class="btn-whatsapp">
+          💬 Order Gummies on WhatsApp
+        </a>
+      </div>
+
+      <!-- Card 2: Premium Probiotics -->
+      <div class="product-card-large">
+        <div class="card-header-flex">
+          <h3>Premium Probiotics (120 Count)</h3>
+          <span class="badge-price">UGX 150,000</span>
+        </div>
+
+        <p class="card-desc">A premium 60-day supply built for your wellness routine. Take two daily to enjoy the benefits of high-potency probiotics wrapped in a delicious gummy formula.</p>
+
+        <div class="select-group">
+          <label for="probioticSize">Select Package Size:</label>
+          <select id="probioticSize" class="custom-select" onchange="updateWhatsappLink('probioticWhatsappBtn', 'Premium Probiotics', this.value)">
+            <option value="120 Count (60-Day Supply) — UGX 150,000">120 Count (60-Day Supply) — UGX 150,000</option>
+          </select>
+        </div>
+
+        <a id="probioticWhatsappBtn" href="https://wa.me/?text=Hi%20Glaze%20Gifts!%20I%20would%20like%20to%20order:%20120%20Count%20(60-Day%20Supply)%20—%20UGX%20150,000" target="_blank" class="btn-whatsapp">
+          💬 Order Probiotics on WhatsApp
+        </a>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    function updateWhatsappLink(buttonId, itemTitle, selectedValue) {
+        const btn = document.getElementById(buttonId);
+        const message = `Hi Glaze Gifts! I would like to order: ${itemTitle} (${selectedValue})`;
+        btn.href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    }
+  </script>
+</body>
+</html>
